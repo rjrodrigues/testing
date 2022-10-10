@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@app/shared/datetime": ["libs/shared/datetime/src/index.ts"],
+      "@app/ui/datepicker": ["libs/ui/datepicker/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

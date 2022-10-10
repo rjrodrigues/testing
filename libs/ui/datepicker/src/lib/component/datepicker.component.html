@@ -1,0 +1,25 @@
+<mat-form-field [floatLabel]="'never'">
+  <mat-label>{{ label }}</mat-label>
+
+  <input
+    matInput
+    [formControl]="formControl"
+    [matDatepicker]="picker"
+    [min]="minDate"
+    [max]="maxDate"
+    [attr.sb-ta-data]="weekendDisabled"
+    [matDatepickerFilter]="dateFilter"
+    (click)="picker.open()"
+    (dateChange)="onDateChange($event)"
+  />
+
+  <mat-datepicker-toggle
+    matSuffix
+    [for]="picker"
+    [disableRipple]="true"
+    [tabIndex]="-1"
+  >
+  </mat-datepicker-toggle>
+
+  <mat-datepicker yPosition="below" #picker></mat-datepicker>
+</mat-form-field>

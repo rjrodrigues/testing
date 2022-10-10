@@ -1,0 +1,43 @@
+{
+  "name": "ui-datepicker",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/ui/datepicker/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/ui/datepicker"],
+      "options": {
+        "project": "libs/ui/datepicker/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ui/datepicker/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ui/datepicker/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/datepicker"],
+      "options": {
+        "jestConfig": "libs/ui/datepicker/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ui/datepicker/**/*.ts",
+          "libs/ui/datepicker/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
